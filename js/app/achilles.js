@@ -12,8 +12,12 @@
 	//	if(datasourcepath === undefined) var datasourcepath = 'data/datasources.json';
 	//	if(containerName === undefined) var containerName = "#achillesContainer";
 	//	if(achillespath === undefined) var achillespath = "achilles.html";
-		
-		wrap.render( datasourcepath, containerName, achillespath);
+		var datasourcepath;
+		$.getJSON("configs.json", function(c){
+			wrap.render( c.datasourcepath, c.containerName, c.achillespath);
+			datasourcepath = c.datasourcepath;
+		});
+	
 		function summaryViewModel() {
 			var self = this;
 

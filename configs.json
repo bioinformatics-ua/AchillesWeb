@@ -1,0 +1,5 @@
+{
+	"datasourcepath" : "data/datasources.json",
+	"containerName" : "#achillesContainer",
+	"achillespath" : "achilles.html"
+}
