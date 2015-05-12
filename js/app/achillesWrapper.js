@@ -3,15 +3,18 @@
 	var report = 'dashboard';
 
 	function Achilles(datasourceURL, containerName , urlDom){
-		this.datasource = datasourceURL;
-		$.ajax(urlDom).done(function(data){
-				$(containerName).append(data);
-				curl( ["achilles"], function(callback){
-					callback();
+		curl(['jquery'], function($) {
+
+			this.datasource = datasourceURL;
+			$.ajax(urlDom).done(function(data){
+					$(containerName).append(data);
+					curl( ["achilles"], function(callback){
+						callback();
+					});
 				});
-			});	
-		
-		
+		});
+
+
 	}
 
 	function updateReport(value) {
@@ -29,4 +32,4 @@
 		document.location = '#/' + page_vm.datasource().name + '/' + report;
 	}
 
-	
+
